@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyDisplayerPrefab: {fileID: 540820343}
-  gameManager: {fileID: 196689738}
   organisms: []
   uiCanvas: {fileID: 630788304}
 --- !u!4 &77775158
@@ -165,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77775156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: 7.0073857, z: -1.2142504}
+  m_LocalPosition: {x: 0.03, y: 7.51, z: -1.2142504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,8 +379,6 @@ GameObject:
   - component: {fileID: 379277480}
   - component: {fileID: 379277479}
   - component: {fileID: 379277478}
-  - component: {fileID: 379277483}
-  - component: {fileID: 379277482}
   m_Layer: 0
   m_Name: CellPrefab
   m_TagString: Untagged
@@ -493,43 +490,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &379277482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379277477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b500c1f30f38e94ea4e22bf7370d139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  circleCollider: {fileID: 0}
-  cellType: 0
-  energyConsumption: 0
-  moveForce: 0
-  moveInterval: 0
-  timer: 0
---- !u!114 &379277483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379277477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4678b81d3418424ab4c0e5f9004e47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  circleCollider: {fileID: 0}
-  cellType: 0
-  energyConsumption: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +619,7 @@ GameObject:
   - component: {fileID: 540820344}
   - component: {fileID: 540820346}
   - component: {fileID: 540820345}
+  - component: {fileID: 540820347}
   m_Layer: 5
   m_Name: OrganismEnergyDisplayerPrefab
   m_TagString: Untagged
@@ -706,7 +667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Organism Energy
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -783,6 +744,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540820343}
   m_CullTransparentMesh: 1
+--- !u!114 &540820347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540820343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5a1864854336f4e813ccce0018ac3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  organism: {fileID: 0}
+  energyDisplayer: {fileID: 540820345}
+  offset: {x: 0, y: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729332307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.03, y: 6.99, z: 0.09761304}
+  m_LocalPosition: {x: 0.02, y: 8.02, z: 0.09761304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
