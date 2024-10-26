@@ -6,13 +6,13 @@ public class Food
 {
     public Rigidbody2D rigidBody;
     public SpriteRenderer spriteRenderer;
-    public CircleCollider2D circleCollider;
+    public PolygonCollider2D polygonCollider2D;
     public int feedValue;
     public virtual void Initialize(GameObject prefab)
     {
         rigidBody = prefab.GetComponent<Rigidbody2D>();
         spriteRenderer = prefab.GetComponent<SpriteRenderer>();
-        circleCollider = prefab.GetComponent<CircleCollider2D>();
+        polygonCollider2D = prefab.GetComponent<PolygonCollider2D>();
         feedValue = 50;
     }
 }
