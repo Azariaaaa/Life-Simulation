@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food
+public class FoodUnit : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public SpriteRenderer spriteRenderer;
