@@ -8,11 +8,26 @@ public class FoodUnit : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public PolygonCollider2D polygonCollider2D;
     public int feedValue;
+    public float moveForce;
+    public float moveInterval;
     public virtual void Initialize(GameObject prefab)
     {
         rigidBody = prefab.GetComponent<Rigidbody2D>();
         spriteRenderer = prefab.GetComponent<SpriteRenderer>();
         polygonCollider2D = prefab.GetComponent<PolygonCollider2D>();
         feedValue = 50;
+        moveForce = 0.8f;
+        moveInterval = 0.5f;
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("Move", 0, moveInterval);
+    }
+
+    private void Move()
+    {
+        Vector2 randomDirection = Random.insideUnitCircle.normalized;
+        rigidBody.AddForce(randomDirection * moveForce, ForceMode2D.Impulse);
     }
 }

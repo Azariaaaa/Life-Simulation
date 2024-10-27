@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         float randomX = UnityEngine.Random.Range(minXSpawnArea, maxXSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
         float randomY = UnityEngine.Random.Range(minYSpawnArea, maxYSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
         Vector2 randomPosition = new Vector2(randomX, randomY);
-        GameObject foodGO = GameObject.Instantiate(cellPrefab, randomPosition, Quaternion.identity);
+        GameObject foodGO = Instantiate(foodPrefab, randomPosition, Quaternion.identity);
         FoodUnit foodUnit = foodGO.AddComponent<FoodUnit>();
         foodUnit.Initialize(foodGO);
         foodUnits.Add(foodUnit);
