@@ -25,6 +25,20 @@ public class FoodUnit : MonoBehaviour
         InvokeRepeating("Move", 0, moveInterval);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Cell cell = collision.gameObject.GetComponent<Cell>();
+
+        if (cell.cellType == Type.EatingCell)
+        {
+            cell.organism.energy += feedValue;
+        }
+        if(cell.cellType == Type.AttackingCell || cell.cellType == Type.EatingCell)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Move()
     {
         Vector2 randomDirection = Random.insideUnitCircle.normalized;
