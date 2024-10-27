@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EatingCell : MonoBehaviour
+public class EatingCell : Cell
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Initialize(GameObject prefab)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Initialize(prefab);
+        cellType = Type.EatingCell;
+        spriteRenderer.color = Color.green;
+        energyConsumption = 0;
     }
 }
