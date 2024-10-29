@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0;i < randomAmountOfCells; i++)
         {
             Vector2 randomPosition = WorldMap.GetNewRandomPostion();
-            Cell cell = CellFactory.CreateRandomCell(cellPrefab, randomPosition);
+            Cell cell = CellFactory.CreateRandomCell(cellPrefab);
             cells.Add(cell);
         }
 

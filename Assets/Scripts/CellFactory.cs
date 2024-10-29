@@ -4,11 +4,11 @@ using UnityEngine;
 
 public static class CellFactory
 {
-    public static Cell CreateRandomCell(GameObject cellPrefab, Vector2 position)
+    public static Cell CreateRandomCell(GameObject cellPrefab)
     {
         Cell cellComponent;
 
-        GameObject newCell = GameObject.Instantiate(cellPrefab, position, Quaternion.identity);
+        GameObject newCell = GameObject.Instantiate(cellPrefab, WorldMap.GetNewRandomPostion(), Quaternion.identity);
         float randomValue = UnityEngine.Random.Range(0,3);
 
         switch (randomValue)
