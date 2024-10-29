@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < organismAmount; i++)
         {
-            Vector2 randomPosition = new Vector2(UnityEngine.Random.Range(minXSpawnArea, maxXSpawnArea), UnityEngine.Random.Range(minYSpawnArea, maxYSpawnArea));
+            Vector2 randomPosition = WorldMap.GetNewRandomPostion();
             GameObject newOrganism = Instantiate(organismPrefab, randomPosition, Quaternion.identity);
             Organism organismComponent = newOrganism.GetComponent<Organism>();
             List<Cell> cells = GetListOfRandomCells();
@@ -39,9 +39,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0;i < randomAmountOfCells; i++)
         {
-            float randomX = UnityEngine.Random.Range(minXSpawnArea, maxXSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
-            float randomY = UnityEngine.Random.Range(minYSpawnArea, maxYSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
-            Vector2 randomPosition = new Vector2(randomX,randomY);
+            Vector2 randomPosition = WorldMap.GetNewRandomPostion();
             Cell cell = CellFactory.CreateRandomCell(cellPrefab, randomPosition);
             cells.Add(cell);
         }
@@ -59,9 +57,7 @@ public class GameManager : MonoBehaviour
 
     private FoodUnit GenerateFood()
     {
-        float randomX = UnityEngine.Random.Range(minXSpawnArea, maxXSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
-        float randomY = UnityEngine.Random.Range(minYSpawnArea, maxYSpawnArea); // faire une classe utilitaire qui retourne des positions aléatoires
-        Vector2 randomPosition = new Vector2(randomX, randomY);
+        Vector2 randomPosition = WorldMap.GetNewRandomPostion();
         GameObject foodGO = Instantiate(foodPrefab, randomPosition, Quaternion.identity);
         FoodUnit foodUnit = foodGO.AddComponent<FoodUnit>();
         foodUnit.Initialize(foodGO);
