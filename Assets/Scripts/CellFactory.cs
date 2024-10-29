@@ -57,5 +57,4 @@ public static class CellFactory
         cellComponent.Initialize(newCell);
         return cellComponent;
     }
-
 }

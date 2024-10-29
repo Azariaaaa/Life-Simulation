@@ -275,6 +275,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   polygonCollider2D: {fileID: 0}
   feedValue: 0
+  moveForce: 0
+  moveInterval: 0
 --- !u!1 &77775156
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +375,7 @@ MonoBehaviour:
   organisms: []
   foodUnits: []
   organismAmount: 15
-  foodSpawnDelay: 5
+  foodSpawnDelay: 1
 --- !u!4 &196689741
 Transform:
   m_ObjectHideFlags: 0

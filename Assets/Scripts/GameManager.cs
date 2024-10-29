@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public List<FoodUnit> foodUnits = new List<FoodUnit>(); 
     public int organismAmount;
     public float foodSpawnDelay;
-    private float minXSpawnArea = -9f, maxXSpawnArea = 9f, minYSpawnArea = 3.5f, maxYSpawnArea = -3.5f;
+    
 
     public static event Action<Organism> OnOrganismInitilized;
 
