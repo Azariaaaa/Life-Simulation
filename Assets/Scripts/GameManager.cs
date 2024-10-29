@@ -22,36 +22,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < organismAmount; i++)
         {
-            Vector2 randomPosition = WorldMap.GetNewRandomPostion();
-            GameObject newOrganism = Instantiate(organismPrefab, randomPosition, Quaternion.identity);
-            Organism organismComponent = newOrganism.GetComponent<Organism>();
-            List<Cell> cells = GetListOfRandomCells();
-            AttachCellToOrganism(cells, organismComponent); // nul 
-            organismComponent.Initialize(cells);
-            OnOrganismInitilized(organismComponent);
-        }
-    }
-
-    private List<Cell> GetListOfRandomCells()
-    {
-        int randomAmountOfCells = UnityEngine.Random.Range(1,6);
-        List<Cell> cells = new List<Cell>();
-
-        for (int i = 0;i < randomAmountOfCells; i++)
-        {
-            Vector2 randomPosition = WorldMap.GetNewRandomPostion();
-            Cell cell = CellFactory.CreateRandomCell(cellPrefab);
-            cells.Add(cell);
-        }
-
-        return cells;
-    }
-
-    private void AttachCellToOrganism(List<Cell> cells, Organism organism)
-    {
-        foreach (Cell cell in cells)
-        {
-            cell.organism = organism;
+            OnOrganismInitilized(OrganismFactory.CreateRandomOrganism(organismPrefab, cellPrefab));
         }
     }
 
@@ -62,6 +33,7 @@ public class GameManager : MonoBehaviour
         FoodUnit foodUnit = foodGO.AddComponent<FoodUnit>();
         foodUnit.Initialize(foodGO);
         foodUnits.Add(foodUnit);
+
         return foodUnit;
     }
 }
