@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public int organismAmount;
     public float foodSpawnDelay;
     
-
     public static event Action<Organism> OnOrganismInitilized;
 
     void Start()
