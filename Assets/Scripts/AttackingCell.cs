@@ -10,7 +10,7 @@ public class AttackingCell : Cell
         base.Initialize(prefab);
         cellType = Type.AttackingCell;
         spriteRenderer.color = Color.red;
-        energyConsumption = 20;
+        energyConsumption = 10;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

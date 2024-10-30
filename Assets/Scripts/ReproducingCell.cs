@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReproducingCell : MonoBehaviour
+public class ReproducingCell : Cell
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Initialize(GameObject prefab)
     {
-        
+        base.Initialize(prefab);
+        cellType = Type.ReproducingCell;
+        spriteRenderer.color = Color.magenta;
+        energyConsumption = 40;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Cell otherCell = collision.gameObject.GetComponent<Cell>();
+
+        if (otherCell.cellType == Type.ReproducingCell)
+        {
+            // à coder
+        }
     }
 }
