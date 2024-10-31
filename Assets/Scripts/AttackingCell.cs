@@ -19,7 +19,7 @@ public class AttackingCell : Cell
 
         if (otherCell != null)
         {
-            if (otherCell.organism != organism && otherCell.cellType != Type.ReproducingCell)
+            if (otherCell.organism != organism)
             {
                 Attack(otherCell);
                 organism.energy -= energyConsumption;
