@@ -374,7 +374,7 @@ MonoBehaviour:
   foodPrefab: {fileID: 73712768}
   organisms: []
   foodUnits: []
-  organismAmount: 15
+  organismAmount: 20
   foodSpawnDelay: 4
 --- !u!4 &196689741
 Transform:
