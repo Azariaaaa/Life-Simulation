@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
 
     private void GenerateInheritedOrganism()
     {
-        OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab)); // A modifier ici voir ScriptableObject
+        for (int i = 0;i < 3; i++)
+        {
+            OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab)); // A modifier ici voir ScriptableObject
+        }
     }
 }

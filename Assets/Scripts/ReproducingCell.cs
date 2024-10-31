@@ -13,7 +13,6 @@ public class ReproducingCell : Cell
         spriteRenderer.color = Color.magenta;
         energyConsumption = 40;
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Cell otherCell = collision.gameObject.GetComponent<Cell>();

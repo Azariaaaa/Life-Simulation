@@ -9,7 +9,7 @@ public class Organism : MonoBehaviour
     public GameObject organismGameObject;
     public List<Cell> cells = new List<Cell>();
     public int energy = 50;
-    public bool isAlive => energy > 0 && cells.Count > 0;
+    public bool isAlive => energy > 0;
     public static event Action<Organism> OnOrganismRemoved;
 
     public void Initialize(List<Cell> cells)
