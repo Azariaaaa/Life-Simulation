@@ -29,19 +29,25 @@ public class FoodUnit : MonoBehaviour
     {
         Cell cell = collision.gameObject.GetComponent<Cell>();
 
-        if (cell.cellType == Type.EatingCell)
+        if (cell != null) 
         {
-            cell.organism.energy += feedValue;
-        }
-        if(cell.cellType == Type.AttackingCell || cell.cellType == Type.EatingCell)
-        {
-            Destroy(gameObject);
+            if (cell.cellType == Type.EatingCell)
+            {
+                cell.organism.energy += feedValue;
+            }
+            if (cell.cellType == Type.AttackingCell || cell.cellType == Type.EatingCell)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
     private void Move()
     {
-        Vector2 randomDirection = Random.insideUnitCircle.normalized;
-        rigidBody.AddForce(randomDirection * moveForce, ForceMode2D.Impulse);
+        if(rigidBody != null)
+        {
+            Vector2 randomDirection = Random.insideUnitCircle.normalized;
+            rigidBody.AddForce(randomDirection * moveForce, ForceMode2D.Impulse);
+        }
     }
 }

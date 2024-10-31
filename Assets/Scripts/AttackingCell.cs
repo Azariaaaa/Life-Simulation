@@ -17,10 +17,13 @@ public class AttackingCell : Cell
     {
         Cell otherCell = collision.gameObject.GetComponent<Cell>();
 
-        if (otherCell.organism != organism)
+        if (otherCell != null)
         {
-            Attack(otherCell);
-            organism.energy -= energyConsumption;
+            if (otherCell.organism != organism)
+            {
+                Attack(otherCell);
+                organism.energy -= energyConsumption;
+            }
         }
     }
 

@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ReproducingCell : Cell
 {
+    public static event Action OnReproducingCellsCollision;
     public override void Initialize(GameObject prefab)
     {
         base.Initialize(prefab);
@@ -16,9 +18,12 @@ public class ReproducingCell : Cell
     {
         Cell otherCell = collision.gameObject.GetComponent<Cell>();
 
-        if (otherCell.cellType == Type.ReproducingCell)
+        if (otherCell != null)
         {
-            // à coder
+            if (otherCell.cellType == Type.ReproducingCell && otherCell.organism != organism)
+            {
+                OnReproducingCellsCollision();
+            }
         }
     }
 }

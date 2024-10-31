@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        ReproducingCell.OnReproducingCellsCollision += GenerateInheritedOrganism; 
+
         InvokeRepeating("GenerateFood", 0, foodSpawnDelay);
 
         for (int i = 0; i < organismAmount; i++)
         {
-            OnOrganismInitilized(OrganismFactory.CreateRandomOrganism(organismPrefab, cellPrefab));
+            OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab));
         }
     }
 
@@ -34,5 +36,10 @@ public class GameManager : MonoBehaviour
         foodUnits.Add(foodUnit);
 
         return foodUnit;
+    }
+
+    private void GenerateInheritedOrganism()
+    {
+        OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab)); // A modifier ici voir ScriptableObject
     }
 }

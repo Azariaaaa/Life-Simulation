@@ -9,7 +9,7 @@ public static class CellFactory
         Cell cellComponent;
 
         GameObject newCell = GameObject.Instantiate(cellPrefab, WorldMap.GetNewRandomPostion(), Quaternion.identity);
-        float randomValue = UnityEngine.Random.Range(0,3);
+        float randomValue = UnityEngine.Random.Range(0,4);
 
         switch (randomValue)
         {
@@ -21,6 +21,9 @@ public static class CellFactory
                 break;
             case 2:
                 cellComponent = newCell.AddComponent<EatingCell>();
+                break;
+            case 3:
+                cellComponent = newCell.AddComponent<ReproducingCell>();
                 break;
             default:
                 cellComponent = newCell.AddComponent<MovingCell>();

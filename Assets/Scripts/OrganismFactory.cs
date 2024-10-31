@@ -4,10 +4,9 @@ using UnityEngine;
 
 public static class OrganismFactory
 {
-    public static Organism CreateRandomOrganism(GameObject organismPrefab, GameObject cellPrefab)
+    public static Organism GetRandomOrganism(GameObject organismPrefab, GameObject cellPrefab)
     {
-        Vector2 randomPosition = WorldMap.GetNewRandomPostion();
-        GameObject newOrganism = UnityEngine.Object.Instantiate(organismPrefab, randomPosition, Quaternion.identity);
+        GameObject newOrganism = Object.Instantiate(organismPrefab, WorldMap.GetNewRandomPostion(), Quaternion.identity);
         Organism organismComponent = newOrganism.GetComponent<Organism>();
         List<Cell> cells = GetListOfRandomCells(cellPrefab);
         AttachCellToOrganism(cells, organismComponent); // nul 
@@ -30,6 +29,7 @@ public static class OrganismFactory
 
         return cells;
     }
+
     private static void AttachCellToOrganism(List<Cell> cells, Organism organism)
     {
         foreach (Cell cell in cells)
