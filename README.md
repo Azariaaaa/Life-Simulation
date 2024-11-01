@@ -1,7 +1,7 @@
 A simple life simulation made by me on Unity. 
 
 V1.3
-- Adjusted reporduce rate
+- Adjusted reproduce rate
 - Added simulation statistics UI
 
 ![e7a9ebaf1ca9ba067aa4e2641752cfc1](https://github.com/user-attachments/assets/b022c6d2-877e-44c3-8353-b2fe9d2490c8)
