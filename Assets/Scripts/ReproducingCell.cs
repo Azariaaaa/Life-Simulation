@@ -19,7 +19,7 @@ public class ReproducingCell : Cell
 
         if (otherCell != null)
         {
-            if (otherCell.cellType == Type.ReproducingCell && otherCell.organism != organism)
+            if (otherCell.cellType == Type.ReproducingCell && otherCell.organism != organism && otherCell.organism.cells.Count == organism.cells.Count)
             {
                 OnReproducingCellsCollision();
             }
