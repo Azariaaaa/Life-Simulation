@@ -57,6 +57,8 @@ public class Organism : MonoBehaviour
 
         OnOrganismRemoved?.Invoke(this);
         Destroy(gameObject);
+        GameStatsManager.Instance.organismsAliveValue--;
+        GameStatsManager.Instance.organismsDeadValue++;
     }
 
     public void RemoveCell(Cell cell)

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < organismAmount; i++)
         {
             OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab));
+            GameStatsManager.Instance.organismsAliveValue ++;
         }
     }
 
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
         for (int i = 0;i < AmountOfBabies; i++)
         {
             OnOrganismInitilized(OrganismFactory.GetRandomOrganism(organismPrefab, cellPrefab)); // A modifier ici voir ScriptableObject
+            GameStatsManager.Instance.organismsAliveValue++;
+            GameStatsManager.Instance.organismsBornValue++;
         }
     }
 }

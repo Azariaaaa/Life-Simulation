@@ -23,6 +23,7 @@ public class AttackingCell : Cell
             {
                 Attack(otherCell);
                 organism.energy -= energyConsumption;
+                GameStatsManager.Instance.cellsKilledValue++;
             }
         }
     }

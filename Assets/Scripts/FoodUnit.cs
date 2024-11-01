@@ -34,6 +34,7 @@ public class FoodUnit : MonoBehaviour
             if (cell.cellType == Type.EatingCell)
             {
                 cell.organism.energy += feedValue;
+                GameStatsManager.Instance.foodEatenValue++;
             }
             if (cell.cellType == Type.AttackingCell || cell.cellType == Type.EatingCell)
             {
